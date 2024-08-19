@@ -1,2 +1,5 @@
+FlaskWebVenv
+
 .vercel
 \.venv
+\.idea
