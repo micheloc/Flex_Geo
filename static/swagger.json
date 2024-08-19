@@ -1,0 +1,52 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API de Envio de Email",
+    "description": "API para envio de e-mails",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/clipping_by_line": {
+      "post": {
+        "summary": "Método responsável em recortar um polygon em duas partes.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SplitPolygon"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Recorte efetuado com sucesso!"
+          },
+          "400": {
+            "description": "Entrada inválida"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SplitPolygon": {
+        "type": "object",
+        "properties": {
+          "polygon": {
+            "type": "string",
+            "example": "",
+            "description": ""
+          },
+          "cutters": {
+            "type": "string",
+            "example": "",
+            "description": ""
+          }
+        }
+      }
+    }
+  }
+}
