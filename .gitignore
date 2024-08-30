@@ -1,5 +1,8 @@
-FlaskWebVenv
-
 .vercel
-\.venv
-\.idea
+.venv
+/.vs
+/FlaskWebVenv
+/Controllers/__pycache__
+/Services/__pycache__
+/vercel.json
+/routes/__pycache__/request_api.cpython-312.pyc

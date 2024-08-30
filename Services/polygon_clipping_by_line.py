@@ -1,7 +1,7 @@
 import json
 from shapely.geometry import Polygon, LineString
 from shapely.ops import split
-from Services.formatedGeoString import format_polygons_for_coordinates
+from Services.format_polygons_for_coordinates import format_polygons_for_coordinates
 
 # Função para converter a string de coordenadas em uma lista de tuplas
 def parse_coordinates(coord_string):
@@ -32,7 +32,7 @@ def polygon_clipping_by_line(polygon, cutters):
   # Dividir o polígono pela linha
   divided_polygons = split(polygon, polyline)
 
-  # Arredondar coordenadas dos polígonos resultantes para evitar pequenos deslocamentos
+  # # Arredondar coordenadas dos polígonos resultantes para evitar pequenos deslocamentos
   divided_polygons_list = [
       Polygon(round_coordinates(geom.exterior.coords)) for geom in divided_polygons.geoms
   ]

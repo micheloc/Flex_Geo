@@ -28,6 +28,29 @@
           }
         }
       }
+    }, 
+    "/refactor_poly_vertices": {
+      "post": {
+        "summary": "Método utilizado para refatorar coleção de poligons",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefactorPolygon"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Junção realizada com sucesso!"
+          },
+          "400": {
+            "description": "Entrada inválida"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -44,6 +67,17 @@
             "type": "string",
             "example": "",
             "description": ""
+          }
+        }
+      },       
+      "RefactorPolygon": {
+        "type": "object",
+        "properties": {
+          "polygon": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       }
